@@ -27,8 +27,8 @@ export function RecordEditorPage() {
     const [hospital, setHospital] = useState(record.hospital);
 
     useEffect(() => {
-        // Sync local state if data changes externally or on mount logic adjustments
-        // For MVP, initial state load is enough as data comes from provider
+        // データが外部で変更された場合や、マウント時のロジック調整でローカルステートを同期する
+        // MVPでは、データはプロバイダーから提供されるため、初期ロードのみで十分
     }, [record]);
 
     const handleAddParams = () => {
@@ -36,7 +36,7 @@ export function RecordEditorPage() {
         const newItems = [...achievements, inputText.trim()];
         setAchievements(newItems);
         setInputText("");
-        // Auto-save logic could go here or on "Save" button
+        // 自動保存ロジックはここか、「保存」ボタンの処理に追加可能
     };
 
     const handleRemove = (index: number) => {

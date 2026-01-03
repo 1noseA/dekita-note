@@ -17,7 +17,7 @@ export function AppStoreProvider({ children }: { children: React.ReactNode }) {
     const [currentUser, setCurrentUser] = useState<string | null>(null);
     const [data, setData] = useState<AppData>(DEFAULT_DATA);
 
-    // Load when user changes
+    // ユーザー変更時にロード
     useEffect(() => {
         if (currentUser) {
             const loaded = storage.load(currentUser);
@@ -27,7 +27,7 @@ export function AppStoreProvider({ children }: { children: React.ReactNode }) {
         }
     }, [currentUser]);
 
-    // Save when data changes
+    // データ変更時に保存
     useEffect(() => {
         if (currentUser) {
             storage.save(currentUser, data);

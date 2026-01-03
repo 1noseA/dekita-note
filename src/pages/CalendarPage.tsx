@@ -7,7 +7,7 @@ export function CalendarPage() {
 
     const today = new Date();
     const currentYear = today.getFullYear();
-    const currentMonth = today.getMonth(); // 0-indexed
+    const currentMonth = today.getMonth(); // 0始まり
 
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
@@ -29,8 +29,8 @@ export function CalendarPage() {
                         </div>
                     ))}
 
-                    {/* Simple offset for start of month (assuming linear for MVP or correct it) */}
-                    {/* MVP: Just list days. Full calendar logic needs day of week offset. */}
+                    {/* 月初めの簡易オフセット（MVPではリニアに仮定、または修正が必要） */}
+                    {/* MVP: 日付を羅列するのみ。完全なカレンダーロジックには曜日のオフセットが必要。 */}
                     {Array.from({ length: new Date(currentYear, currentMonth, 1).getDay() }).map((_, i) => (
                         <div key={`empty-${i}`} />
                     ))}

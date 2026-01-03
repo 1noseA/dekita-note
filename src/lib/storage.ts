@@ -19,7 +19,7 @@ export const storage = {
             const key = `${STORAGE_KEY}-${userId}`;
             const raw = localStorage.getItem(key);
             if (!raw) return DEFAULT_DATA;
-            return { ...DEFAULT_DATA, ...JSON.parse(raw) }; // Merge to ensure new fields exist
+            return { ...DEFAULT_DATA, ...JSON.parse(raw) }; // 新しいフィールドが存在することを保証するためにマージ
         } catch (e) {
             console.error("Failed to load data", e);
             return DEFAULT_DATA;
