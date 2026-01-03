@@ -8,28 +8,28 @@ export function SettingsPage() {
     return (
         <div className="flex flex-col h-full bg-background">
             <header className="p-4 border-b flex items-center gap-4">
-                <Link to="/" className="text-sm text-muted-foreground">Back</Link>
-                <h2 className="text-lg font-bold flex-1 text-center">Settings</h2>
+                <Link to="/" className="text-sm text-muted-foreground">戻る</Link>
+                <h2 className="text-lg font-bold flex-1 text-center">設定</h2>
                 <div className="w-8" />
             </header>
 
             <main className="flex-1 p-4 space-y-6 overflow-y-auto">
                 <div className="space-y-4">
-                    <h3 className="text-sm font-medium text-muted-foreground">Visibility</h3>
+                    <h3 className="text-sm font-medium text-muted-foreground">表示設定</h3>
 
                     <div className="space-y-2">
                         <Toggle
-                            label="Show Medication"
+                            label="服薬チェックを表示"
                             checked={settings.showMedication}
                             onChange={v => updateSettings({ showMedication: v })}
                         />
                         <Toggle
-                            label="Show Period"
+                            label="生理チェックを表示"
                             checked={settings.showPeriod}
                             onChange={v => updateSettings({ showPeriod: v })}
                         />
                         <Toggle
-                            label="Show Hospital Check"
+                            label="通院チェックを表示"
                             checked={settings.showHospital}
                             onChange={v => updateSettings({ showHospital: v })}
                         />
@@ -41,7 +41,7 @@ export function SettingsPage() {
                         onClick={logout}
                         className="w-full py-3 text-destructive font-bold bg-destructive/10 rounded-md hover:bg-destructive/20 transition-colors"
                     >
-                        Logout
+                        ログアウト
                     </button>
                 </div>
             </main>

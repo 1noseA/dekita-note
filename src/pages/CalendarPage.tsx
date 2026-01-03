@@ -23,7 +23,7 @@ export function CalendarPage() {
 
             <main className="flex-1 p-4 overflow-y-auto">
                 <div className="grid grid-cols-7 gap-2">
-                    {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
+                    {["日", "月", "火", "水", "木", "金", "土"].map(day => (
                         <div key={day} className="text-center text-xs text-muted-foreground font-medium py-2">
                             {day}
                         </div>
@@ -58,7 +58,7 @@ export function CalendarPage() {
                     to={`/edit?date=${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`}
                     className="block w-full bg-primary text-primary-foreground text-center py-3 rounded-md font-bold shadow-md hover:bg-primary/90 transition-colors"
                 >
-                    Record Today
+                    今日の記録をつける
                 </Link>
             </div>
         </div>

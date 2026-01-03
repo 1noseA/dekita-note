@@ -7,10 +7,10 @@ export function LandingPage() {
         <div className="flex flex-col items-center justify-center h-full bg-background p-4 space-y-8">
             <div className="text-center space-y-2">
                 <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
-                    Dekita Note
+                    できたノート
                 </h1>
                 <p className="text-xl text-muted-foreground">
-                    Record your small achievements daily.
+                    日々の小さな「できた」を記録しよう。
                 </p>
             </div>
 
@@ -19,13 +19,13 @@ export function LandingPage() {
                     className="w-full bg-primary text-primary-foreground h-12 rounded-md font-medium"
                     onClick={() => login("user_1")}
                 >
-                    Login as User 1
+                    ユーザー1としてログイン
                 </button>
                 <button
                     className="w-full bg-secondary text-secondary-foreground h-12 rounded-md font-medium"
                     onClick={() => login("user_2")}
                 >
-                    Login as User 2
+                    ユーザー2としてログイン
                 </button>
             </div>
         </div>

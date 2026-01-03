@@ -58,18 +58,18 @@ export function RecordEditorPage() {
     return (
         <div className="flex flex-col h-full bg-background">
             <header className="p-4 border-b flex items-center gap-4">
-                <Link to="/" className="text-sm text-muted-foreground">Cancel</Link>
+                <Link to="/" className="text-sm text-muted-foreground">キャンセル</Link>
                 <h2 className="text-lg font-bold flex-1 text-center">{targetDate}</h2>
-                <button onClick={handleSave} className="text-sm font-bold text-primary">Done</button>
+                <button onClick={handleSave} className="text-sm font-bold text-primary">完了</button>
             </header>
 
             <main className="flex-1 p-4 overflow-y-auto space-y-6">
                 <div className="space-y-2">
-                    <label className="text-sm font-medium">Achievements</label>
+                    <label className="text-sm font-medium">できたこと</label>
                     <div className="flex gap-2">
                         <input
                             className="flex-1 border rounded px-3 py-2 bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                            placeholder="What did you do?"
+                            placeholder="何ができましたか？"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             onKeyDown={(e) => e.key === "Enter" && handleAddParams()}
@@ -84,31 +84,31 @@ export function RecordEditorPage() {
                             </li>
                         ))}
                         {achievements.length === 0 && (
-                            <li className="text-muted-foreground text-sm text-center py-4">No records yet.</li>
+                            <li className="text-muted-foreground text-sm text-center py-4">まだ記録がありません。</li>
                         )}
                     </ul>
                 </div>
 
                 <div className="space-y-3 pt-4 border-t">
-                    <h3 className="text-sm font-medium text-muted-foreground">Health Checks</h3>
+                    <h3 className="text-sm font-medium text-muted-foreground">体調チェック</h3>
 
                     {settings.showMedication && (
                         <label className="flex items-center justify-between p-3 bg-muted/20 rounded cursor-pointer">
-                            <span>Medication</span>
+                            <span>服薬</span>
                             <input type="checkbox" checked={medication} onChange={e => setMedication(e.target.checked)} className="w-5 h-5 accent-emerald-500" />
                         </label>
                     )}
 
                     {settings.showPeriod && (
                         <label className="flex items-center justify-between p-3 bg-muted/20 rounded cursor-pointer">
-                            <span>Period</span>
+                            <span>生理</span>
                             <input type="checkbox" checked={period} onChange={e => setPeriod(e.target.checked)} className="w-5 h-5 accent-red-400" />
                         </label>
                     )}
 
                     {settings.showHospital && (
                         <label className="flex items-center justify-between p-3 bg-muted/20 rounded cursor-pointer">
-                            <span>Hospital Visit</span>
+                            <span>通院</span>
                             <input type="checkbox" checked={hospital} onChange={e => setHospital(e.target.checked)} className="w-5 h-5 accent-blue-500" />
                         </label>
                     )}

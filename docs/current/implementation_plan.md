@@ -1,25 +1,66 @@
-# できたノート 実装計画書
+# MVP 実装計画 (完了)
 
-localStorage を活用した、日々の「できたこと」を記録する Web アプリケーションの実装計画です。
+## 概要
+「Dekita Note」のMVPを実装します。日々の達成記録と体調管理を行うWebアプリケーションです。
 
-## 技術スタック
-- **Frontend**: Vite + React + TypeScript
-- **Styling**: TailwindCSS + shadcn/ui + Lucide React
-- **Routing**: React Router
-- **Persistence**: localStorage
+## 実装項目
 
-## 主要コンポーネント
-1.  **Storage Layer (`src/lib/storage.ts`)**: `AppStorage` 型に基づいたデータの読み書きを担当。
-2.  **Color Engine (`src/lib/color-engine.ts`)**: 記録内容からカレンダーに表示する色を算出。
-3.  **App Context (`src/context/AppStoreContext.tsx`)**: ログインユーザーの状態とデータの同期を管理。
+1. **プロジェクト基盤構築**
+    - Vite + React + TypeScript 環境構築
+    - TailwindCSS + shadcn/ui 導入
+    - ルーティング設定 (React Router)
 
-## 画面設計
-- `LandingPage`: 未ログイン時の概要説明。
-- `CalendarPage`: 月間の色の変化をグラフィカルに表示。
-- `RecordEditorPage`: 3つの基本項目 + 追加可能な実績入力フォーム。
-- `SettingsPage`: 表示項目のトグル設定。
+2. **データ管理**
+    - `localStorage` によるデータ永続化
+    - Context API による状態管理（複数ユーザー対応）
 
-## 検証計画
-- ユーザー切り替え (user_1, user_2) でデータが混ざらないことを確認。
-- ページリロード後もデータが保持されていることを確認。
-- 記録保存後、カレンダーの色が正しく更新されることを確認。
+3. **画面実装**
+    - **LandingPage**: ユーザー切り替え（ログイン）
+    - **CalendarPage**: カレンダー表示・実績に応じた色分け
+    - **RecordEditorPage**: 実績入力・体調チェック（薬・生理・通院）
+    - **SettingsPage**: 体調チェック項目の表示設定
+
+---
+
+# 日本語化計画 (2026-01-03)
+
+アプリケーション全体のUIテキストを英語から日本語へ翻訳します。
+
+## 変更内容
+
+### `src/pages`
+
+#### [MODIFY] [LandingPage.tsx](file:///c:/Users/1nose/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/dekita-note/src/pages/LandingPage.tsx)
+- "Record your small achievements daily." -> 「日々の小さな「できた」を記録しよう。」
+- "Login as User 1" -> 「ユーザー1としてログイン」
+- "Login as User 2" -> 「ユーザー2としてログイン」
+
+#### [MODIFY] [CalendarPage.tsx](file:///c:/Users/1nose/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/dekita-note/src/pages/CalendarPage.tsx)
+- 曜日ヘッダー: "Sun", "Mon"... -> "日", "月"...
+- "Record Today" -> 「今日の記録をつける」
+
+#### [MODIFY] [RecordEditorPage.tsx](file:///c:/Users/1nose/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/dekita-note/src/pages/RecordEditorPage.tsx)
+- "Cancel" -> 「キャンセル」
+- "Done" -> 「完了」
+- "Achievements" -> 「できたこと」
+- "What did you do?" (placeholder) -> 「何ができましたか？」
+- "No records yet." -> 「まだ記録がありません。」
+- "Health Checks" -> 「体調チェック」
+- "Medication" -> 「服薬」
+- "Period" -> 「生理」
+- "Hospital Visit" -> 「通院」
+
+#### [MODIFY] [SettingsPage.tsx](file:///c:/Users/1nose/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/dekita-note/src/pages/SettingsPage.tsx)
+- "Back" -> 「戻る」
+- "Settings" -> 「設定」
+- "Visibility" -> 「表示設定」
+- "Show Medication" -> 「服薬チェックを表示」
+- "Show Period" -> 「生理チェックを表示」
+- "Show Hospital Check" -> 「通院チェックを表示」
+- "Logout" -> 「ログアウト」
+
+### その他
+
+#### [MODIFY] [index.html](file:///c:/Users/1nose/OneDrive/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/dekita-note/index.html)
+- `<html lang="en">` -> `<html lang="ja">`
+- Title -> "できたノート"
