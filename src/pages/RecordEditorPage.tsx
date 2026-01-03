@@ -56,7 +56,7 @@ export function RecordEditorPage() {
     const { settings } = data;
 
     return (
-        <div className="flex flex-col h-screen bg-background">
+        <div className="flex flex-col h-full bg-background">
             <header className="p-4 border-b flex items-center gap-4">
                 <Link to="/" className="text-sm text-muted-foreground">Cancel</Link>
                 <h2 className="text-lg font-bold flex-1 text-center">{targetDate}</h2>

@@ -4,7 +4,7 @@ export function LandingPage() {
     const { login } = useAppStore();
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 space-y-8">
+        <div className="flex flex-col items-center justify-center h-full bg-background p-4 space-y-8">
             <div className="text-center space-y-2">
                 <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
                     Dekita Note

@@ -13,7 +13,7 @@ export function CalendarPage() {
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
     return (
-        <div className="flex flex-col h-screen bg-background">
+        <div className="flex flex-col h-full bg-background">
             <header className="p-4 border-b flex items-center justify-between">
                 <h2 className="text-xl font-bold">{currentYear} / {currentMonth + 1}</h2>
                 <Link to="/settings" className="p-2 text-muted-foreground hover:text-foreground">

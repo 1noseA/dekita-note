@@ -6,14 +6,14 @@ export function SettingsPage() {
     const { settings } = data;
 
     return (
-        <div className="flex flex-col h-screen bg-background">
+        <div className="flex flex-col h-full bg-background">
             <header className="p-4 border-b flex items-center gap-4">
                 <Link to="/" className="text-sm text-muted-foreground">Back</Link>
                 <h2 className="text-lg font-bold flex-1 text-center">Settings</h2>
                 <div className="w-8" />
             </header>
 
-            <main className="p-4 space-y-6">
+            <main className="flex-1 p-4 space-y-6 overflow-y-auto">
                 <div className="space-y-4">
                     <h3 className="text-sm font-medium text-muted-foreground">Visibility</h3>
 
